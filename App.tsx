@@ -1,14 +1,28 @@
 import 'nativewind';
 import './global.css';
-import { View, Text } from 'react-native'
-import React from 'react'
-import Button from '@shipex/components/Buttons/Button'
+import AnimatedSplashScreen from '@shipex/screens/splash_screen/AnimatedSplashScreen';
+import { useState } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import AppNavigation from '@shipex/navigations/AppNavigation';
 
 export default function App() {
+  const [visible, setVisible] = useState(true);
   return (
-    <View className='flex-1'>
-      <Text>App</Text>
-      <Button label='New'/>
-    </View>
-  )
+    <>
+      {visible ? (
+        <AnimatedSplashScreen
+          onAnimationEnd={() => {
+            setVisible(false);
+          }}
+        />
+      ) : (
+        <GestureHandlerRootView style={{flex: 1}}>
+         
+            <AppNavigation />
+          
+        </GestureHandlerRootView>
+      )}
+    
+    </>
+  );
 }

@@ -1,3 +1,4 @@
+import {StackNavigationOptions} from '@react-navigation/stack';
 export const colors = {
     primary: '#2F50C1',
     disabled: '#EAE7F2',
@@ -12,3 +13,7 @@ export const colors = {
     borderColor: '#000',
     inputBgColor: '#F4F2F8',
   };  
+
+  export const stackScreenOptions: StackNavigationOptions = {
+    headerShown: false,
+  };

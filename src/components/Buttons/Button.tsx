@@ -7,9 +7,8 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-import { ButtonProps } from '../types';
-import { colors } from '@shipex/constants';
-
+import {ButtonProps} from '../types';
+import {colors} from '@shipex/constants';
 
 function Button({
   IconRight,
@@ -55,14 +54,12 @@ function Button({
       className={`w-full h-14 mx-auto rounded-lg justify-center items-center flex-row px-2.5 relative overflow-hidden gap-2.5 ${style}`}
       style={{
         backgroundColor: disabled ? colors.disabled : backgroundColor,
+        ...style,
       }}
       {...props}>
       <Animated.View
         className="absolute z-10 opacity-30 inset-0"
-        style={[
-          {backgroundColor: 'rgba(0,0,0,0.5)'},
-          reanimatedStyle,
-        ]}
+        style={[{backgroundColor: 'rgba(0,0,0,0.5)'}, reanimatedStyle]}
       />
       {IconLeft && IconLeft}
       <Animated.Text

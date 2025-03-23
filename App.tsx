@@ -1,9 +1,10 @@
 import 'nativewind';
 import './global.css';
 import AnimatedSplashScreen from '@shipex/screens/splash_screen/AnimatedSplashScreen';
-import { useState } from 'react';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import {useState} from 'react';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import AppNavigation from '@shipex/navigations/AppNavigation';
+import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 
 export default function App() {
   const [visible, setVisible] = useState(true);
@@ -17,12 +18,11 @@ export default function App() {
         />
       ) : (
         <GestureHandlerRootView style={{flex: 1}}>
-         
+          <BottomSheetModalProvider>
             <AppNavigation />
-          
+          </BottomSheetModalProvider>
         </GestureHandlerRootView>
       )}
-    
     </>
   );
 }

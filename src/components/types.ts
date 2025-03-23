@@ -12,6 +12,7 @@ export type ButtonProps = {
   backgroundColor?: string;
   testId?: string;
   fontColor?: string;
+  className?: string;
 };
 
 export type AppTextProps = TextProps & {
@@ -32,3 +33,15 @@ export interface InputProps extends TextInputProps {
   errorClassName?: string;
   iconClassName?: string;
 }
+
+export type CheckboxProps = {
+  isChecked?: boolean;
+  onCheck: () => void;
+};
+
+export type HeaderProps = {
+  className?: string;
+  avatarClassName?: string;
+  notificationClassName?: string;
+  logoClassName?: string;
+};

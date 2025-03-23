@@ -75,7 +75,7 @@ const Input = forwardRef<TextInput, InputProps>(
     return (
       <>
         <Animated.View
-          className={`border rounded-lg h-14 mt-5 w-full flex-row bg-gray-100  ${containerClassName} ${className}`}
+          className={`border rounded-lg h-14 mt-5 w-full flex-row bg-gray-100 bg-[#F4F2F8]  ${containerClassName} ${className}`}
           style={animatedBorderStyle}>
           {icon && (
             <View

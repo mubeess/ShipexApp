@@ -21,6 +21,7 @@ function Button({
   backgroundColor = colors.primary,
   fontColor = colors.white,
   testId,
+  className,
   ...props
 }: ButtonProps) {
   const {width} = Dimensions.get('window');
@@ -45,17 +46,20 @@ function Button({
       stopLoading();
     }
   }, [isLoading]);
+
   return (
     <TouchableOpacity
       testID={testId}
       disabled={disabled}
       activeOpacity={0.7}
       onPress={onPress}
-      className={`w-full h-14 mx-auto rounded-lg justify-center items-center flex-row px-2.5 relative overflow-hidden gap-2.5 ${style}`}
-      style={{
-        backgroundColor: disabled ? colors.disabled : backgroundColor,
-        ...style,
-      }}
+      className={`w-full h-14 mx-auto rounded-lg justify-center items-center flex-row px-2.5 relative overflow-hidden gap-2.5 ${className}`}
+      style={[
+        {
+          backgroundColor: disabled ? colors.disabled : backgroundColor,
+        },
+        style, // Parent styles will override the default styles
+      ]}
       {...props}>
       <Animated.View
         className="absolute z-10 opacity-30 inset-0"

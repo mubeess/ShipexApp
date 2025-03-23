@@ -5,7 +5,7 @@ import {useState} from 'react';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import AppNavigation from '@shipex/navigations/AppNavigation';
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
-
+import Toast from 'react-native-toast-message';
 export default function App() {
   const [visible, setVisible] = useState(true);
   return (
@@ -23,6 +23,7 @@ export default function App() {
           </BottomSheetModalProvider>
         </GestureHandlerRootView>
       )}
+      <Toast />
     </>
   );
 }

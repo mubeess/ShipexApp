@@ -34,3 +34,26 @@ export type ShipmentType = {
   status: string;
   total_weight: number;
 };
+
+export type ShipmentStatus = {
+  _assign: string | null;
+  _comments: string | null;
+  _liked_by: string | null;
+  _user_tags: string | null;
+  color: string;
+  creation: string;
+  docstatus: number;
+  idx: number;
+  modified: string;
+  modified_by: string;
+  name: string;
+  owner: string;
+  status: string;
+};
+export type ShipmentStatusResponse = {
+  message: ShipmentStatus[];
+};
+
+export type ShipmentResponse = {
+  message: ShipmentType[];
+};

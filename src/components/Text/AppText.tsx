@@ -25,10 +25,26 @@ export function AppText({
     }
   };
 
+  const getFontFamily = () => {
+    switch (type) {
+      case 'defaultSemiBold':
+        return {fontFamily: 'SFPRODISPLAYMEDIUM'};
+      case 'title':
+        return {fontFamily: 'SFPRODISPLAYBOLD'};
+      case 'default':
+      case 'subtitle':
+      case 'link':
+      default:
+        return {fontFamily: 'SFPRODISPLAYREGULAR'};
+    }
+  };
+
+  const baseClasses = `text-gray-900 ${getTypeClasses()}`;
+
   return (
     <Text
-      className={`text-gray-900 ${getTypeClasses()} ${className}`}
-      style={style}
+      className={className ? `${baseClasses} ${className}` : baseClasses}
+      style={[getFontFamily(), style]}
       {...rest}
     />
   );

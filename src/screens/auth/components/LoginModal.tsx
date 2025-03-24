@@ -46,7 +46,7 @@ export default function LoginModal({
                 <AppText className="text-lg text-primary">Cancel</AppText>
               </TouchableOpacity>
 
-              <AppText className="my-2.5 text-black text-[35px] font-bold">
+              <AppText className="my-2.5 text-black text-[34px] font-bold">
                 Login
               </AppText>
               <AppText className="text-lightGray text-base text-justify w-[90%]">

@@ -71,6 +71,7 @@ function Button({
           className="text-base"
           style={{
             color: disabled ? colors.gray : fontColor,
+            fontFamily: 'SFPRODISPLAYREGULAR',
           }}>
           {label}
         </Animated.Text>

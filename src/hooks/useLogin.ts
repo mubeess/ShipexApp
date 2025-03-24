@@ -9,7 +9,6 @@ export const useLogin = () => {
     try {
       setLoading(true);
       const response = await loginFetcher({usr, pwd});
-
       await AsyncStorage.setItem('full_name', response.full_name);
       await AsyncStorage.setItem('user', usr);
 

@@ -53,7 +53,7 @@ function Button({
       disabled={disabled}
       activeOpacity={0.7}
       onPress={onPress}
-      className={`w-full h-14 mx-auto rounded-lg justify-center items-center flex-row px-2.5 relative overflow-hidden gap-2.5 ${className}`}
+      className={`w-full h-14 mx-auto rounded-[10px] justify-center items-center flex-row px-2.5 relative overflow-hidden gap-2.5 ${className}`}
       style={[
         {
           backgroundColor: disabled ? colors.disabled : backgroundColor,
@@ -61,18 +61,20 @@ function Button({
         style, // Parent styles will override the default styles
       ]}
       {...props}>
-      <Animated.View
+      {/* <Animated.View
         className="absolute z-10 opacity-30 inset-0"
         style={[{backgroundColor: 'rgba(0,0,0,0.5)'}, reanimatedStyle]}
-      />
+      /> */}
       {IconLeft && IconLeft}
-      <Animated.Text
-        className="text-base"
-        style={{
-          color: disabled ? colors.gray : fontColor,
-        }}>
-        {label}
-      </Animated.Text>
+      {!isLoading && (
+        <Animated.Text
+          className="text-base"
+          style={{
+            color: disabled ? colors.gray : fontColor,
+          }}>
+          {label}
+        </Animated.Text>
+      )}
       {IconRight && !isLoading && IconRight}
       {isLoading && <ActivityIndicator color="#fff" />}
     </TouchableOpacity>

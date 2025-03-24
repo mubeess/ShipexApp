@@ -26,7 +26,7 @@ function Login() {
         testID="login-logo"
         resizeMode="contain"
         source={LogoImage}
-        className="h-9 w-full my-auto"
+        className="h-9 w-full mt-auto"
       />
       <Button
         testId="login-button"

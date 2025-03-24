@@ -14,6 +14,7 @@ import {FilterModalProps} from '../types';
 
 import {AppText} from '@shipex/components/Text/AppText';
 import {colors} from '@shipex/constants';
+import {useShipmentStatus} from '@shipex/hooks/useShipment';
 
 export default function FilterModal({
   bottomSheetRef,
@@ -26,14 +27,7 @@ export default function FilterModal({
   itemClassName = '',
   loadingClassName = '',
 }: FilterModalProps) {
-  const shpmentStatus = [
-    {name: 'Recieved'},
-    {name: 'Putaway'},
-    {name: 'Delivered'},
-    {name: 'On Hold'},
-  ];
-  const isLoading = false;
-
+  const {shpmentStatus, isLoading} = useShipmentStatus();
   return (
     <BottomSheet
       backdropComponent={props => (
@@ -74,7 +68,7 @@ export default function FilterModal({
           </View>
 
           <AppText
-            className={`font-medium text-sm my-2.5 ml-5 ${headingClassName}`}>
+            className={`font-light text-sm my-2.5 ml-5 text-[#58536E] ${headingClassName}`}>
             SHIPMENT STATUS
           </AppText>
 
